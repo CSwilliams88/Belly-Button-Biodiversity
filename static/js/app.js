@@ -1,7 +1,7 @@
 function init(){
     d3.json("samples.json").then((sampledata) => {
       var samplenames = sampledata.names
-        //console.log(samplenames)
+        console.log(samplenames)
         var location = d3.select("#selDataset")
         samplenames.forEach(function(data){
             location.append("option").text(data).property("value", data)
@@ -10,8 +10,7 @@ function init(){
         buildcharts(samplenames[0])
     })
 }
-init()
-​
+init()​
 function optionChanged(newID){
     buildtable(newID)
     buildcharts(newID)
